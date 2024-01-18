@@ -1,0 +1,13 @@
+@import "../../../styles/VARIABLES.module.scss";
+
+.class {
+  font-family: $MAIN_FONT_FAMILY;
+  background-color: $FOOTER_COLOR;
+  color: $FONT_COLOR;
+  border: 2px solid black;
+}
+
+.class2 {
+  background-color: $HEADER_COLOR;
+  border: 2px solid black;
+}
