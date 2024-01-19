@@ -1,0 +1,8 @@
+@import "../../../../styles/VARIABLES.module.scss";
+
+.footer {
+  grid-column: 1/-1;
+  display: flex;
+  color: grey;
+  background-color: $MAIN_BACKGROUND_COLOR;
+}

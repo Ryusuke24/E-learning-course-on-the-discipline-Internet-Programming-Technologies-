@@ -7,3 +7,7 @@ body {
   font-family: $MAIN_FONT_FAMILY;
   margin: 0;
 }
+
+.active {
+  color: lighten($MAIN_BACKGROUND_COLOR, 25%);
+}

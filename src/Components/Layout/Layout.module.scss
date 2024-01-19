@@ -1,7 +1,9 @@
-@media (max-width: 768px) {
+@import "../../../styles/VARIABLES.module.scss";
+
+@media (max-width: 990px) {
   .layout {
     display: grid;
-    grid-template-rows: 80px 1fr 80px;
+    grid-template-rows: 80px 1fr 160px;
     grid-template-areas:
       "header"
       "main"
@@ -15,17 +17,17 @@
   .main {
     margin-top: 5px;
     min-height: 100vh;
-    border: 1px solid black;
+    border-bottom: 1px solid $FOOTER_COLOR;
     grid-area: main;
   }
 
   .footer {
     grid-area: footer;
-    height: 80px;
+    height: 160px;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 991px) {
   .layout {
     display: grid;
     grid-template-rows: 80px 1fr 80px;
@@ -41,7 +43,7 @@
 
   .main {
     min-height: calc(100vh - 170px);
-    border: 1px solid black;
+    border-bottom: 1px solid $FOOTER_COLOR;
     grid-area: main;
   }
 

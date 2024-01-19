@@ -1,6 +1,6 @@
 @import "../../../../styles/VARIABLES.module.scss";
 
-@media (max-width: 768px) {
+@media (max-width: 990px) {
   .header {
     grid-column: 1/-1;
     display: flex;
@@ -8,28 +8,10 @@
     justify-content: space-between;
     padding: 0px 20px 0 20px;
     background-color: $HEADER_COLOR;
-    border: black 2px solid;
+    border: $MAIN_BACKGROUND_COLOR 2px solid;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-  }
-
-  .popupMenu {
-    top: 85px;
-    right: 0px;
-    position: absolute;
-    z-index: 90;
-    background-color: lighten($HEADER_COLOR, 10%);
-    opacity: 95%;
-    height: 50vh;
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  .loginBlock {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding: 0px 20px 0 20px;
+    z-index: 99;
   }
 
   .openMenuButton {
@@ -37,13 +19,17 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 991px) {
   .header {
     grid-column: 1/-1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 20px 0 20px;
+    padding: 0px 25px 0 25px;
     background-color: $HEADER_COLOR;
+    border: $MAIN_BACKGROUND_COLOR 2px solid;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 99;
   }
 }

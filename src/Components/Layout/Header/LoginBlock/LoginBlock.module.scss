@@ -1,0 +1,53 @@
+@import "../../../../../styles/VARIABLES.module.scss";
+
+@media (max-width: 990px) {
+  .loginBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+    color: $MAIN_BACKGROUND_COLOR;
+    font-size: larger;
+  }
+
+  .registerLink,
+  .signInLink {
+    text-decoration: none;
+    background-color: $MAIN_BUTTON_COLOR;
+    color: $HEADER_COLOR;
+    border: 1px solid $MAIN_BACKGROUND_COLOR;
+    border-radius: 8px;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($MAIN_BUTTON_COLOR, 10%);
+    }
+  }
+}
+@media (min-width: 991px) {
+  .registerLink,
+  .signInLink {
+    text-decoration: none;
+    background-color: $MAIN_BUTTON_COLOR;
+    color: $HEADER_COLOR;
+    border: 1px solid $MAIN_BACKGROUND_COLOR;
+    border-radius: 8px;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($MAIN_BUTTON_COLOR, 10%);
+    }
+  }
+  .loginBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    color: $MAIN_BACKGROUND_COLOR;
+    font-size: larger;
+  }
+}
