@@ -1,0 +1,42 @@
+@import "../styles/VARIABLES.module.scss";
+
+.markedText {
+  font-weight: 700;
+} // Текст для выделения
+
+.text {
+  margin-bottom: 30px;
+}
+
+.subTitle {
+  font-size: 1.2em;
+} // Подраздел
+
+.title {
+  text-align: center;
+  font-size: 1.6em;
+} //Раздел
+
+.list {
+  padding-left: 25px;
+  display: inline-flex;
+  flex-flow: column wrap;
+  gap: 15px;
+} //  обычный список
+
+.outLinks {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: $FONT_COLOR;
+
+  &:active {
+    color: $FOOTER_COLOR;
+  }
+}
+
+.inLinks {
+}

@@ -22,7 +22,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: lighten($MAIN_BUTTON_COLOR, 10%);
+      background-color: lighten($MAIN_BUTTON_COLOR, 15%);
     }
   }
 }
@@ -38,7 +38,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: lighten($MAIN_BUTTON_COLOR, 10%);
+      background-color: lighten($MAIN_BUTTON_COLOR, 15%);
     }
   }
   .loginBlock {
