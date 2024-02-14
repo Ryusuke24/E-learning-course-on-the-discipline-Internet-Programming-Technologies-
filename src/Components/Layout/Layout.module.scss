@@ -19,6 +19,7 @@
     min-height: 100vh;
     border-bottom: 1px solid $FOOTER_COLOR;
     grid-area: main;
+    display: flex;
   }
 
   .footer {

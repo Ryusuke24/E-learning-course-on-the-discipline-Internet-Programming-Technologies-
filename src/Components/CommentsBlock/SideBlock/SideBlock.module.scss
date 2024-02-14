@@ -1,0 +1,13 @@
+@import "../../../../styles/VARIABLES.module.scss";
+@import "../../../../styles/Classes.module.scss";
+
+.root {
+  color: $FONT_COLOR !important;
+  background-color: $FOOTER_COLOR !important;
+  border: none !important;
+}
+
+.title {
+  padding: 15px 15px 0 15px !important;
+  text-align: start !important;
+}

@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
 import MobileNavigation from "../Navigation/MobileNavigation";
 import MobileLoginBlock from "../LoginBlock/MobileLoginBlock";
 import style from "./PopupMenu.module.scss";
 
-function PopupMenu() {
+function PopupMenu({ setClick }) {
   return (
     <div className={style.popupMenu}>
-      <MobileLoginBlock />
-      <MobileNavigation />
+      <MobileLoginBlock setClick={setClick} />
+      <MobileNavigation setClick={setClick} />
     </div>
   );
 }

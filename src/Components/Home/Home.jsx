@@ -4,7 +4,7 @@ import style from "./Home.module.scss";
 function Home() {
   return (
     <>
-      <main className={style.main}>
+      <div className={style.main}>
         <section className={style.section1}>
           <h1 className={style.title}>
             Электронный учебный курс по дисциплине "Технологии интернет
@@ -87,7 +87,7 @@ function Home() {
             </li>{" "}
           </ul>
         </section>
-      </main>
+      </div>
     </>
   );
 }

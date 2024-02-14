@@ -1,5 +1,5 @@
-@import "../../../../styles/VARIABLES.module.scss";
-@import "../../../../styles/Classes.module.scss";
+@import "../../../styles/VARIABLES.module.scss";
+@import "../../../styles/Classes.module.scss";
 
 @media (max-width: 990px) {
   .main {
@@ -40,6 +40,8 @@
     li {
       display: flex;
       align-items: center;
+      height: 80px;
+      width: 80px;
       border: 1px solid $FOOTER_COLOR;
       padding: 20px;
 

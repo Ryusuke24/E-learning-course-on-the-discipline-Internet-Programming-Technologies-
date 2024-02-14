@@ -1,0 +1,14 @@
+@import "../../../styles/VARIABLES.module.scss";
+@import "../../../styles/Classes.module.scss";
+
+.text {
+  p,
+  span {
+    color: $FONT_COLOR !important;
+    font-family: $MAIN_FONT_FAMILY;
+
+    &:first-child {
+      font-weight: 600;
+    }
+  }
+}

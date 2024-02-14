@@ -1,31 +1,101 @@
-@import "../../../../styles/VARIABLES.module.scss";
-@import "../../../../styles/Classes.module.scss";
+@import "../../../../../styles/VARIABLES.module.scss";
+@import "../../../../../styles/Classes.module.scss";
 
 @media (max-width: 990px) {
+  .openMenuButton {
+    position: fixed;
+    color: $FONT_COLOR;
+    z-index: 98;
+    top: 75px;
+  }
+
+  .closeMenuButton {
+    padding-top: 15px;
+  }
+
+  .navigationMenu {
+    top: -10px;
+    padding-right: 15px;
+    position: fixed;
+    border: 1px solid $MAIN_BACKGROUND_COLOR;
+    min-height: 105vh;
+    min-width: 200px;
+    width: fit-content;
+    z-index: 99;
+    background-color: $HEADER_COLOR;
+    border-radius: 10px;
+    -webkit-animation: scale-in-hor-left 0.5s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .paginationBlock {
+    display: flex;
+    justify-content: space-around;
+  }
+
   .main {
     display: grid;
     min-height: inherit;
     color: $FONT_COLOR;
     font-family: $MAIN_FONT_FAMILY;
+    margin-left: 25px;
+
+    padding: 20px;
 
     .section1 {
-      padding: 20px;
       background-color: $MAIN_BACKGROUND_COLOR;
     }
 
     .section2 {
-      padding: 20px;
       background-color: $FOOTER_COLOR;
+    }
 
-      .listBlocks {
-        li {
-          border: 1px solid $MAIN_BACKGROUND_COLOR;
+    .commentBlock {
+      border-top: 1px solid $FOOTER_COLOR;
+      padding: 10px;
 
-          &:hover {
-            -webkit-animation: shadow-pop-tr-dark 0.3s
-              cubic-bezier(0.47, 0, 0.745, 0.715) both;
-            animation: shadow-pop-tr-dark 0.3s
-              cubic-bezier(0.47, 0, 0.745, 0.715) both;
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+      }
+
+      textarea {
+        font-family: $MAIN_FONT_FAMILY;
+        width: 100%;
+        height: 100px;
+        color: $FONT_COLOR;
+        border: none;
+        border-bottom: 1px $FONT_COLOR solid;
+        background-color: $MAIN_BACKGROUND_COLOR;
+        resize: none;
+        font-size: 1.3em;
+      }
+
+      .addCommentBlock {
+        display: flex;
+        gap: 15px;
+
+        .addComment {
+          width: 100%;
+          display: flex;
+          gap: 10px;
+          flex-flow: column wrap;
+
+          button {
+            width: 125px;
+            padding: 10px;
+            align-self: flex-end;
+            color: $HEADER_COLOR;
+            background-color: $MAIN_BUTTON_COLOR;
+            border: 1px solid $FOOTER_COLOR;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 600;
+            &:hover {
+              background-color: darken($MAIN_BUTTON_COLOR, 5);
+            }
           }
         }
       }
@@ -40,6 +110,8 @@
     li {
       display: flex;
       align-items: center;
+      height: 80px;
+      width: 80px;
       border: 1px solid $FOOTER_COLOR;
       padding: 20px;
 
@@ -50,15 +122,58 @@
       }
     }
   }
+  .codeBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .codeBlockButtons {
+      margin-right: 25px;
+      display: flex;
+      gap: 15px;
+    }
+  }
 }
 
 @media (min-width: 991px) {
+  .openMenuButton {
+    position: fixed;
+    color: $FONT_COLOR;
+    z-index: 98;
+    top: 75px;
+  }
+
+  .closeMenuButton {
+    padding-top: 15px;
+  }
+
+  .navigationMenu {
+    top: -10px;
+    position: fixed;
+    border: 1px solid $MAIN_BACKGROUND_COLOR;
+    min-height: 100vh;
+    width: 30%;
+    z-index: 99;
+    background-color: $HEADER_COLOR;
+    border-radius: 10px;
+    -webkit-animation: scale-in-hor-left 0.5s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .paginationBlock {
+    display: flex;
+    justify-content: space-around;
+  }
+
   .main {
     display: grid;
     min-height: inherit;
     color: $FONT_COLOR;
     font-family: $MAIN_FONT_FAMILY;
     font-size: large;
+    margin-left: 25px;
+    margin-bottom: 10px;
   }
 
   .section1 {
@@ -90,6 +205,75 @@
             cubic-bezier(0.47, 0, 0.745, 0.715) both;
           animation: shadow-pop-tr-dark 0.3s cubic-bezier(0.47, 0, 0.745, 0.715)
             both;
+        }
+      }
+    }
+  }
+
+  .codeBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .codeBlockButtons {
+      margin-right: 25px;
+      display: flex;
+      gap: 15px;
+    }
+  }
+
+  .commentBlock {
+    border-top: 1px solid $FOOTER_COLOR;
+    padding: 25px 50px;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      margin-right: 25px;
+    }
+
+    textarea {
+      font-family: $MAIN_FONT_FAMILY;
+      width: 100%;
+      height: 100px;
+      color: $FONT_COLOR;
+      border: none;
+      border-bottom: 1px $FOOTER_COLOR solid;
+      background-color: $MAIN_BACKGROUND_COLOR;
+      resize: none;
+      outline: none;
+      font-size: 1.3em;
+
+      &:focus {
+        -webkit-animation: tracking-in-expand 0.7s
+          cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+          both;
+      }
+    }
+
+    .addCommentBlock {
+      display: flex;
+
+      .addComment {
+        width: 100%;
+        display: flex;
+        gap: 25px;
+        flex-flow: column wrap;
+
+        button {
+          width: 150px;
+          align-self: flex-end;
+          color: $HEADER_COLOR;
+          background-color: $MAIN_BUTTON_COLOR;
+          border: 1px solid $FOOTER_COLOR;
+          border-radius: 50px;
+          font-size: 1em;
+          padding: 10px;
+          &:hover {
+            background-color: darken($MAIN_BUTTON_COLOR, 5);
+          }
         }
       }
     }
@@ -204,5 +388,63 @@
       7px -7px $MAIN_BACKGROUND_COLOR, 8px -8px $MAIN_BACKGROUND_COLOR;
     -webkit-transform: translateX(-8px) translateY(8px);
     transform: translateX(-8px) translateY(8px);
+  }
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
   }
 }

@@ -1,13 +1,15 @@
 import { NavLink } from "react-router-dom";
 import style from "./Navigation.module.scss";
 
-function MobileNavigation() {
+function MobileNavigation({ setClick }) {
   return (
-    <nav className={style.navigationBlock}>
+    <nav className={style.navigationBlock} onClick={() => setClick(false)}>
       <NavLink to={"/"} className={style.navigateLink}>
         Главная
       </NavLink>
-      <NavLink className={style.navigateLink}>Учебные курсы</NavLink>
+      <NavLink to={"Courses"} className={style.navigateLink}>
+        Учебные курсы
+      </NavLink>
       <NavLink to={"advanceCourses"} className={style.navigateLink}>
         Дополнительные курсы
       </NavLink>

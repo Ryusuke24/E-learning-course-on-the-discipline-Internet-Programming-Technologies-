@@ -1,0 +1,57 @@
+@import "../../../styles/VARIABLES.module.scss";
+
+@media (max-width: 990px) {
+  .root {
+    align-self: start !important;
+    padding: 20px !important;
+    margin: 150px auto 0 !important;
+    color: $MAIN_BACKGROUND_COLOR !important;
+    background-color: $HEADER_COLOR !important;
+  }
+
+  .title {
+    padding-bottom: 50px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    font-size: 1.6em !important;
+  }
+
+  .input {
+    padding-bottom: 20px !important;
+  }
+
+  .button {
+    color: $HEADER_COLOR !important;
+    background-color: $MAIN_BUTTON_COLOR !important;
+  }
+}
+
+@media (min-width: 991px) {
+  .root {
+    width: 600px !important;
+    align-self: start !important;
+    padding: 20px !important;
+    margin: 150px auto 0 !important;
+    color: $MAIN_BACKGROUND_COLOR !important;
+    background-color: $HEADER_COLOR !important;
+  }
+
+  .title {
+    padding-bottom: 50px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    font-size: 2em !important;
+  }
+
+  .input {
+    padding-bottom: 20px !important;
+  }
+
+  .button {
+    color: $HEADER_COLOR !important;
+    background-color: $MAIN_BUTTON_COLOR !important;
+    &:hover {
+      background-color: darken($MAIN_BUTTON_COLOR, 20) !important;
+    }
+  }
+}

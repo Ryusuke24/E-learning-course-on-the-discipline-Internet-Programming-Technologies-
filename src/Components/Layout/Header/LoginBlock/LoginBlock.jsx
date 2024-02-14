@@ -4,8 +4,12 @@ import style from "./LoginBlock.module.scss";
 function LoginBlock() {
   return (
     <div className={style.loginBlock}>
-      <Link className={style.registerLink}>Войти</Link>
-      <Link className={style.signInLink}>Зарегистрироваться</Link>
+      <Link to={"login"} className={style.registerLink}>
+        Войти
+      </Link>
+      <Link to={"register"} className={style.signInLink}>
+        Зарегистрироваться
+      </Link>
     </div>
   );
 }

@@ -27,7 +27,7 @@ function Header() {
               toggle={setClick}
               className={style.openMenuButton}
             />
-            {isClicked && <PopupMenu />}
+            {isClicked && <PopupMenu setClick={setClick} />}
           </>
         )}
       </header>
