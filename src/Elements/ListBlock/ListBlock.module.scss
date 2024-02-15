@@ -1,42 +1,52 @@
-@import "../../../../../styles/VARIABLES.module.scss";
-@import "../../../../../styles/Classes.module.scss";
+@import "../../../styles/VARIABLES.module.scss";
+@import "../../../styles/Classes.module.scss";
 
 @media (max-width: 990px) {
-  .main {
-    display: grid;
-    min-height: inherit;
-    color: $FONT_COLOR;
-    font-family: $MAIN_FONT_FAMILY;
-    margin-left: 25px;
-
+  .section1 {
     padding: 20px;
+    background-color: $MAIN_BACKGROUND_COLOR;
+  }
 
-    .section1 {
-      background-color: $MAIN_BACKGROUND_COLOR;
+  .section2 {
+    padding: 20px;
+    background-color: $FOOTER_COLOR;
+
+    .listBlocks {
+      li {
+        border: 1px solid $MAIN_BACKGROUND_COLOR;
+
+        &:hover {
+          -webkit-animation: shadow-pop-tr-dark 0.3s
+            cubic-bezier(0.47, 0, 0.745, 0.715) both;
+          animation: shadow-pop-tr-dark 0.3s cubic-bezier(0.47, 0, 0.745, 0.715)
+            both;
+        }
+      }
     }
+  }
 
-    .section2 {
-      background-color: $FOOTER_COLOR;
-    }
-
-    .commentBlock {
-      border-top: 1px solid $FOOTER_COLOR;
-      padding: 10px;
+  .listBlocks {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    li {
+      display: flex;
+      align-items: center;
+      border: 1px solid $FOOTER_COLOR;
+      padding: 20px;
+      height: 80px;
+      width: 100px;
+      &:hover {
+        -webkit-animation: shadow-pop-tr 0.3s
+          cubic-bezier(0.47, 0, 0.745, 0.715) both;
+        animation: shadow-pop-tr 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+      }
     }
   }
 }
 
 @media (min-width: 991px) {
-  .main {
-    display: grid;
-    min-height: inherit;
-    color: $FONT_COLOR;
-    font-family: $MAIN_FONT_FAMILY;
-    font-size: large;
-    margin-left: 25px;
-    margin-bottom: 10px;
-  }
-
   .section1 {
     padding-left: 25px;
     background-color: $MAIN_BACKGROUND_COLOR;
@@ -69,11 +79,6 @@
         }
       }
     }
-  }
-
-  .commentBlock {
-    border-top: 1px solid $FOOTER_COLOR;
-    padding: 25px 50px;
   }
 
   .listBlocks {

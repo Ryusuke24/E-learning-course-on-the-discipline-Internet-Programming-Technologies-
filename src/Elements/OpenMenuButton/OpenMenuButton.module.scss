@@ -1,0 +1,39 @@
+@import "../../../styles/VARIABLES.module.scss";
+@import "../../../styles/Classes.module.scss";
+
+@media (max-width: 990px) {
+  .openMenuButton {
+    position: fixed;
+    color: $MAIN_BACKGROUND_COLOR;
+    z-index: 98;
+    top: 90px;
+    left: 10px;
+    padding: 5 px;
+    background-color: $FONT_COLOR;
+    border: 1px solid $FONT_COLOR;
+    border-radius: 25px;
+
+    &:hover {
+      background-color: darken($FONT_COLOR, 20%);
+      border: 1px solid darken($FONT_COLOR, 20%);
+    }
+  }
+}
+@media (min-width: 991px) {
+  .openMenuButton {
+    position: fixed;
+    color: $MAIN_BACKGROUND_COLOR;
+    z-index: 98;
+    top: 90px;
+    left: 35px;
+    padding: 5 px;
+    background-color: $FONT_COLOR;
+    border: 1px solid $FONT_COLOR;
+    border-radius: 25px;
+
+    &:hover {
+      background-color: darken($FONT_COLOR, 20%);
+      border: 1px solid darken($FONT_COLOR, 20%);
+    }
+  }
+}

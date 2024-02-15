@@ -1,6 +1,29 @@
 @import "../../../../../styles/VARIABLES.module.scss";
 
 @media (max-width: 990px) {
+  .authLoginBlock {
+    padding-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+
+    .logoutButton {
+      width: 100px;
+      background-color: $MAIN_BUTTON_COLOR;
+      color: $HEADER_COLOR;
+      border: 1px solid $MAIN_BACKGROUND_COLOR;
+      border-radius: 8px;
+      padding: 5px;
+      cursor: pointer;
+      font-size: larger;
+
+      &:hover {
+        background-color: darken($MAIN_BUTTON_COLOR, 20%);
+      }
+    }
+  }
+
   .loginBlock {
     display: flex;
     align-items: center;
@@ -27,6 +50,26 @@
   }
 }
 @media (min-width: 991px) {
+  .authLoginBlock {
+    display: flex;
+    gap: 15px;
+
+    .logoutButton {
+      width: 100px;
+      background-color: $MAIN_BUTTON_COLOR;
+      color: $HEADER_COLOR;
+      border: 1px solid $MAIN_BACKGROUND_COLOR;
+      border-radius: 8px;
+      padding: 5px;
+      cursor: pointer;
+      font-size: larger;
+
+      &:hover {
+        background-color: darken($MAIN_BUTTON_COLOR, 20%);
+      }
+    }
+  }
+
   .registerLink,
   .signInLink {
     text-decoration: none;

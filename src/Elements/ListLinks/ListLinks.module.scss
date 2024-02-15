@@ -1,0 +1,51 @@
+@import "../../../styles/VARIABLES.module.scss";
+@import "../../../styles/Classes.module.scss";
+
+@media (max-width: 990px) {
+  ul {
+    list-style: none;
+  }
+
+  .navigateLink {
+    text-decoration: none;
+    color: $MAIN_BACKGROUND_COLOR;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($HEADER_COLOR, 5%);
+    }
+  }
+  .activeNavigateLink {
+    color: $MAIN_BACKGROUND_COLOR;
+
+    text-decoration: none;
+    cursor: default;
+    font-size: x-large;
+    margin-left: 20px;
+  }
+}
+@media (min-width: 991px) {
+  ul {
+    list-style: none !important;
+  }
+
+  .navigateLink {
+    text-decoration: none;
+    color: lighten($MAIN_BACKGROUND_COLOR, 10%);
+    cursor: pointer;
+    margin-left: 20px;
+
+    &:hover {
+      color: lighten($MAIN_BACKGROUND_COLOR, 25%);
+    }
+  }
+
+  .activeNavigateLink {
+    color: $MAIN_BACKGROUND_COLOR;
+
+    text-decoration: none;
+    cursor: default;
+    font-size: x-large;
+    margin-left: 20px;
+  }
+}

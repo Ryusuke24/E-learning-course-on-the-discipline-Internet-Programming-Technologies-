@@ -1,50 +1,63 @@
 import { Link } from "react-router-dom";
+import { ListBlock } from "../../../Elements/ListBlock/ListBlock";
 import style from "./CourseHTML.module.scss";
 
 function MainHTML() {
   return (
     <>
       <div className={style.main}>
-        <section className={style.section1}>
-          <h1 className={style.title}>Занятия по теме HTML</h1>
-          <ul className={style.listBlocks}>
-            <li>
-              <Link to={"1"} className={style.outLinks}>
-                Лекция 1. <br />
-                <span className={style.markedText}>
-                  Введение. <br /> Основы разработки интернет-приложений
-                </span>
-              </Link>
-            </li>{" "}
-            <li>
-              <Link to={"2"} className={style.outLinks}>
-                Лекция 2.
-                <br />{" "}
-                <span className={style.markedText}>
-                  Основные элементы языка HTML
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link to={"3"} className={style.outLinks}>
-                {" "}
-                Практическое занятие 3. <br />
-                <span className={style.markedText}>
-                  Использование основных элементов HTML
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link to={"4"} className={style.outLinks}>
-                Практическое занятие 4.
-                <br />{" "}
-                <span className={style.markedText}>
-                  Современныхе средства разработки содержимого веб-страниц HTML
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <ListBlock
+          title={"Занятия по теме HTML"}
+          section={1}
+          elems={[
+            {
+              to: "1",
+              text: (
+                <p>
+                  Лекция 1. <br />
+                  <span className={style.markedText}>
+                    Введение. <br /> Основы разработки интернет-приложений
+                  </span>
+                </p>
+              ),
+            },
+            {
+              to: "2",
+              text: (
+                <p>
+                  Лекция 2.
+                  <br />{" "}
+                  <span className={style.markedText}>
+                    Основные элементы языка HTML
+                  </span>
+                </p>
+              ),
+            },
+            {
+              to: "3",
+              text: (
+                <p>
+                  Практическое занятие 3. <br />
+                  <span className={style.markedText}>
+                    Основные элементы языка HTML
+                  </span>
+                </p>
+              ),
+            },
+            {
+              to: "4",
+              text: (
+                <p>
+                  Практическое занятие 4.
+                  <br />{" "}
+                  <span className={style.markedText}>
+                    Cредства разработки веб-страниц
+                  </span>
+                </p>
+              ),
+            },
+          ]}
+        />
       </div>
     </>
   );

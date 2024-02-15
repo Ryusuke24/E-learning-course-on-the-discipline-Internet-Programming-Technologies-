@@ -11,6 +11,14 @@ function Header() {
   const width = useResize();
   const [isClicked, setClick] = useState(false);
 
+  const obj = {
+    user: {
+      username: "Ryusuke",
+      avatarUrl: "https://vesti42.ru/wp-content/uploads/2023/08/anime.jpg",
+    },
+  };
+  const isAuth = true;
+
   return (
     <>
       <header className={style.header}>
@@ -18,7 +26,7 @@ function Header() {
         {width.width >= 991 ? (
           <>
             <Navigation />
-            <LoginBlock />
+            <LoginBlock isAuth={isAuth} obj={obj} />
           </>
         ) : (
           <>
@@ -27,7 +35,9 @@ function Header() {
               toggle={setClick}
               className={style.openMenuButton}
             />
-            {isClicked && <PopupMenu setClick={setClick} />}
+            {isClicked && (
+              <PopupMenu setClick={setClick} isAuth={isAuth} obj={obj} />
+            )}
           </>
         )}
       </header>
