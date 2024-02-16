@@ -93,20 +93,15 @@ function LessonHTML1() {
               ]}
             ></List>
             <CodeBlock
+              linkToEdit="https://onecompiler.com/html/424mce2cc"
               lang={"JavaScript"}
               code={
                 <pre>
                   <code className="language-javascript">
                     {`
-        onSubmit(e) {
-          e.preventDefault();
-          const job = {
-            title: 'Developer',
-            company: 'Facebook' 
-            };
-          }
-        }
-        `}
+  alert('Hello world')
+  let obj = { a : 1}
+  alert(obj.a)`}
                   </code>
                 </pre>
               }

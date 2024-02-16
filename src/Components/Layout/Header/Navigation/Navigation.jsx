@@ -11,9 +11,9 @@ function Navigation() {
         Главная
       </NavLink>
       <NavLink to={"courses"} className={setActive}>
-        Учебные курсы
+        Учебные темы
       </NavLink>
-      <NavLink to={"advanceCourses"} className={setActive}>
+      <NavLink to={"AdvanceCourses"} className={setActive}>
         Дополнительные курсы
       </NavLink>
       <NavLink to={"about"} className={setActive}>

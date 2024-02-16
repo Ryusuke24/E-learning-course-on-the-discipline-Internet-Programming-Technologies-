@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import style from "./LoginBlock.module.scss";
@@ -6,12 +7,17 @@ function LoginBlock({ isAuth, obj }) {
   return (
     <>
       {isAuth ? (
-        <div className={style.authLoginBlock}>
-          <Avatar alt={obj.user.fullName} src={obj.user.avatarUrl} />
-          <button className={style.logoutButton} onClick={() => {}}>
-            Выйти
-          </button>
-        </div>
+        <>
+          <div className={style.authLoginBlock}>
+            <Link to={"/account"}>
+              <Avatar alt={obj.user.fullName} src={obj.user.avatarUrl} />
+            </Link>
+
+            <button className={style.logoutButton} onClick={() => {}}>
+              Выйти
+            </button>
+          </div>
+        </>
       ) : (
         <div className={style.loginBlock}>
           <Link to={"login"} className={style.registerLink}>

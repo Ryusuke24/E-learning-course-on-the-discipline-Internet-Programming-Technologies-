@@ -1,15 +1,36 @@
 @import "../../../styles/VARIABLES.module.scss";
-.notFound {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  color: $FONT_COLOR;
-  height: calc(100vh - 180px);
+@import "../../../styles/Classes.module.scss";
 
-  img {
-    -webkit-animation: wobble-hor-bottom 2.5s infinite both;
-    animation: wobble-hor-bottom 2.5s infinite both;
+@media (max-width: 990px) {
+  .notFound {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    color: $FONT_COLOR;
+    height: calc(100vh - 350px);
+
+    img {
+      -webkit-animation: wobble-hor-bottom 2.5s infinite both;
+      animation: wobble-hor-bottom 2.5s infinite both;
+    }
+  }
+}
+@media (min-width: 991px) {
+  .notFound {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    color: $FONT_COLOR;
+    height: calc(100vh - 180px);
+
+    img {
+      -webkit-animation: wobble-hor-bottom 2.5s infinite both;
+      animation: wobble-hor-bottom 2.5s infinite both;
+    }
   }
 }
 

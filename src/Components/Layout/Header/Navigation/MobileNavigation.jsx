@@ -8,9 +8,9 @@ function MobileNavigation({ setClick }) {
         Главная
       </NavLink>
       <NavLink to={"Courses"} className={style.navigateLink}>
-        Учебные курсы
+        Учебные темы
       </NavLink>
-      <NavLink to={"advanceCourses"} className={style.navigateLink}>
+      <NavLink to={"AdvanceCourses"} className={style.navigateLink}>
         Дополнительные курсы
       </NavLink>
       <NavLink to={"about"} className={style.navigateLink}>

@@ -56,22 +56,6 @@ function CoursesMain() {
             },
           ]}
         />
-
-        <ListBlock
-          title={"Дополнительные курсы"}
-          section={2}
-          elems={[
-            {
-              to: "React",
-              text: (
-                <p>
-                  Курс по React <br />
-                  (в разработке)
-                </p>
-              ),
-            },
-          ]}
-        />
       </div>
     </>
   );

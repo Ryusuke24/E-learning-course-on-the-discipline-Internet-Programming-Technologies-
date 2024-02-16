@@ -9,10 +9,12 @@ function MobileLoginBlock({ setClick, isAuth, obj }) {
     <>
       {isAuth ? (
         <div className={style.authLoginBlock}>
-          <Avatar
-            alt={obj.user.fullName}
-            src={obj.user.avatarUrl ? obj.user.avatarUrl : AccountLogoSVG}
-          />
+          <Link to={"/account"}>
+            <Avatar
+              alt={obj.user.fullName}
+              src={obj.user.avatarUrl ? obj.user.avatarUrl : AccountLogoSVG}
+            />
+          </Link>
           <button className={style.logoutButton} onClick={() => {}}>
             Выйти
           </button>

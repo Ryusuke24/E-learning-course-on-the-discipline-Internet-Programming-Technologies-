@@ -8,6 +8,7 @@ import MainLayout from "./Components/Courses/WebsiteLayout/MainLayout";
 import MainJS from "./Components/Courses/JavaScript/MainJS";
 import MainPHP from "./Components/Courses/PHP/MainPHP";
 import CoursesMain from "./Components/Courses/CoursesMain";
+import AdvanceCoursesMain from "./Components/AdvanceCourses/AdvanceCoursesMain";
 import NotFoundPage from "./Components/NotFoundPage/NotFoundPage";
 import Login from "./Components/login/Login";
 import Register from "./Components/register/Register";
@@ -32,6 +33,9 @@ function App() {
           <Route path="Layout" element={<MainLayout />} />
           <Route path="JS" element={<MainJS />} />
           <Route path="PHP" element={<MainPHP />} />
+        </Route>
+        <Route path="AdvanceCourses">
+          <Route index element={<AdvanceCoursesMain />} />
         </Route>
         <Route path={"*"} element={<NotFoundPage />} />
       </Route>
