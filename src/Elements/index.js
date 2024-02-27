@@ -1,12 +1,13 @@
-import { PaginationBlock } from "./Elements/PaginationBlock/PaginationBlock";
-import { AddComment } from "./Elements/AddComment/AddComment";
-import { List } from "./Elements/List/List";
-import { SubTitle } from "./Elements/SubTitle/SubTitle";
-import { Text } from "./Elements/Text/Text";
-import { Title } from "./Elements/Title/Title";
-import { CodeBlock } from "./Elements/CodeBlock/CodeBlock";
-import { CommentsBlock } from "./CommentsBlock/CommentsBlock";
-import { MenuBar } from "./Elements/MenuBar/MenuBar";
+import { PaginationBlock } from "./PaginationBlock/PaginationBlock";
+import { AddComment } from "./AddComment/AddComment";
+import { List } from "./List/List";
+import { SubTitle } from "./SubTitle/SubTitle";
+import { Text } from "./Text/Text";
+import { Title } from "./Title/Title";
+import { CodeBlock } from "./CodeBlock/CodeBlock";
+import { ListBlock } from "./ListBlock/ListBlock";
+import { MenuBar } from "./MenuBar/MenuBar";
+import { Menu } from "./Menu/Menu";
 
 export {
   PaginationBlock,
@@ -16,6 +17,7 @@ export {
   Text,
   Title,
   CodeBlock,
-  CommentsBlock,
   MenuBar,
+  ListBlock,
+  Menu,
 };

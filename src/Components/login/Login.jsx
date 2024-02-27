@@ -1,21 +1,45 @@
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchUserData } from "../../redux/auth";
+import { useState } from "react";
+
 import Paper from "@mui/material/Paper";
 import { Button, TextField, Typography } from "@mui/material";
+
 import style from "./Login.module.scss";
 
 function Login() {
-  const isAuth = false;
+  const [data, setData] = useState(false);
 
-  const { register, handleSubmit } = useForm({
+  const dispatch = useDispatch();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({
     defaultValues: {
-      email: "example@mail.ru",
-      password: "12345",
+      email: "ryusuke_1@mail.ru",
+      password: "123456",
     },
     mode: "onChange",
   });
 
-  if (isAuth) {
+  const onSubmit = async values => {
+    const data = await dispatch(fetchUserData(values));
+
+    if (!data.payload) {
+      alert("Не удалось авторизоваться");
+    }
+
+    if ("token" in data.payload) {
+      localStorage.setItem("token", data.payload.token);
+      setData(data);
+    }
+  };
+
+  if (data) {
     return <Navigate to={"/"} replace />;
   }
 
@@ -24,21 +48,21 @@ function Login() {
       <Typography variant="h5" className={style.title}>
         Вход в аккаунт
       </Typography>
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           className={style.input}
           label="E-mail"
           fullWidth
-          error={false}
-          helperText={""}
+          error={Boolean(errors.email?.message)}
+          helperText={errors.email?.message}
           {...register("email", { required: "Укажите почту" })}
         />
         <TextField
           className={style.input}
           label="Password"
           fullWidth
-          error={false}
-          helperText={""}
+          error={Boolean(errors.password?.message)}
+          helperText={errors.password?.message}
           {...register("password", { required: "Укажите пароль" })}
         />
         <Button

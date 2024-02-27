@@ -1,14 +1,21 @@
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchRegister } from "../../redux/auth";
+
 import Paper from "@mui/material/Paper";
 import Avatar from "@mui/material/Avatar";
 import { Button, TextField, Typography } from "@mui/material";
+
 import style from "./Register.module.scss";
-import { useRef, useState } from "react";
+
+import { HOST_NAME } from "../../variables";
 
 function Register() {
+  const [data, setData] = useState(null);
   const ref = useRef();
-  const isAuth = false;
+  const dispatch = useDispatch();
   const [imageUrl, setImageUrl] = useState("");
 
   const {
@@ -17,31 +24,57 @@ function Register() {
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
-      UserName: "UserName",
+      username: "Test",
       email: "example@mail.ru",
       password: "12345",
     },
     mode: "onChange",
   });
 
-  function handleChangeFile(e) {
-    setImageUrl("https://vesti42.ru/wp-content/uploads/2023/08/anime.jpg");
+  async function handleChangeFile(e) {
+    try {
+      const formData = new FormData();
+      const file = e.target.files[0];
+      formData.append("image", file);
+      const res = await fetch(`${HOST_NAME}/uploads`, {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      setImageUrl(`${HOST_NAME}/${data.url}`);
+    } catch (error) {}
   }
 
   function onClickRemoveImage() {
     setImageUrl("");
   }
 
-  if (isAuth) {
-    return <Navigate to={"/"} replace />;
-  }
+  const onSubmit = async values => {
+    const fields = {
+      ...values,
+      imageUrl,
+    };
+    const data = await dispatch(fetchRegister(fields));
+
+    if (!data.payload) {
+      alert("Не удалось авторизоваться");
+    }
+
+    if ("token" in data.payload) {
+      localStorage.setItem("token", data.payload.token);
+      setData(data);
+    }
+  };
+
+  if (data) return <Navigate to={`/login`} />;
 
   return (
     <Paper className={style.root}>
       <Typography variant="h5" className={style.title}>
         Регистрация
       </Typography>
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={style.avatar}>
           {imageUrl ? (
             <>
@@ -75,23 +108,24 @@ function Register() {
           className={style.input}
           label="Username"
           fullWidth
-          error={false}
-          helperText={""}
+          error={Boolean(errors.username?.message)}
+          helperText={errors.username?.message}
+          {...register("username", { required: "Укажите имя пользователя" })}
         />
         <TextField
           className={style.input}
           label="E-mail"
           fullWidth
-          error={false}
-          helperText={""}
+          error={Boolean(errors.email?.message)}
+          helperText={errors.email?.message}
           {...register("email", { required: "Укажите почту" })}
         />
         <TextField
           className={style.input}
           label="Password"
           fullWidth
-          error={false}
-          helperText={""}
+          error={Boolean(errors.password?.message)}
+          helperText={errors.password?.message}
           {...register("password", { required: "Укажите пароль" })}
         />
         <Button

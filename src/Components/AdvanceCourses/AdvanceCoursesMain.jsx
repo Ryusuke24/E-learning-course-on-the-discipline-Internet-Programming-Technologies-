@@ -1,4 +1,5 @@
-import { ListBlock } from "../../Elements/ListBlock/ListBlock";
+import { ListBlock } from "../../Elements/index";
+
 import style from "./AdvanceCoursesMain.module.scss";
 
 function AdvanceCoursesMain() {

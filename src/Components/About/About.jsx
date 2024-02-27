@@ -1,10 +1,7 @@
-import { Title } from "../../Elements/Title/Title";
-import { SubTitle } from "../../Elements/SubTitle/SubTitle";
-import { Text } from "../../Elements/Text/Text";
-import { List } from "../../Elements/List/List";
+import { Title, List, Text, SubTitle } from "../../Elements/index";
+import style from "./About.module.scss";
 import ReactLogoSVG from "./ReactLogo.svg";
 import ExpressLogoSVG from "./ExpressLogo.svg";
-import style from "./About.module.scss";
 
 function About() {
   return (

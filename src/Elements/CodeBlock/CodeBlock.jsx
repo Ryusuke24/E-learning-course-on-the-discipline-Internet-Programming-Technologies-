@@ -10,6 +10,7 @@ import editButtonSVG from "./EditButton.svg";
 export const CodeBlock = ({ code, lang, linkToEdit = "#" }) => {
   function handleClick(e) {
     e.preventDefault();
+    // eslint-disable-next-line no-new-func
     let func = new Function(code.props.children.props.children);
     func();
   }
@@ -24,7 +25,6 @@ export const CodeBlock = ({ code, lang, linkToEdit = "#" }) => {
         <p>{lang}</p>
         <div className={style.codeBlockButtons}>
           <Tooltip title="Выполнить код">
-            {" "}
             <a href="#" onClick={e => handleClick(e)}>
               <img src={runButtonSVG} alt="Run" />
             </a>

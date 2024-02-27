@@ -1,17 +1,36 @@
-import { PaginationBlock } from "../../../../Elements/PaginationBlock/PaginationBlock";
-import { AddComment } from "../../../../Elements/AddComment/AddComment";
-import { List } from "../../../../Elements/List/List";
-import { SubTitle } from "../../../../Elements/SubTitle/SubTitle";
-import { Text } from "../../../../Elements/Text/Text";
-import { Title } from "../../../../Elements/Title/Title";
-import { CodeBlock } from "../../../../Elements/CodeBlock/CodeBlock";
+import {
+  PaginationBlock,
+  AddComment,
+  List,
+  SubTitle,
+  Text,
+  Title,
+  CodeBlock,
+  Menu,
+} from "../../../../Elements/index";
 import { CommentsBlock } from "../../../CommentsBlock/CommentsBlock";
-import { Menu } from "../../../../Elements/Menu/Menu";
+
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchComments } from "../../../../redux/comments";
+import { useState } from "react";
+
 import style from "./LessonHTML1.module.scss";
 
 function LessonHTML1() {
-  const imageUrl = "https://vesti42.ru/wp-content/uploads/2023/08/anime.jpg";
-
+  const [text, setText] = useState();
+  const [isEdit, setEditMode] = useState(false);
+  const [editableId, setEditableId] = useState("");
+  const ref = useRef();
+  const { comments, errors, loading } = useSelector(state => state.comments);
+  const user = useSelector(state => state.auth.data);
+  const location = useLocation();
+  const [_, __, course, lesson] = location.pathname.split("/");
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchComments());
+  }, []);
   return (
     <>
       <div className={style.container}>
@@ -109,26 +128,40 @@ function LessonHTML1() {
             <PaginationBlock to={"/Courses/HTML/2"} back={"/Courses/HTML/"} />
           </section>
           <section className={style.commentBlock}>
-            <AddComment imageUrl={imageUrl} />
+            <AddComment
+              ref={ref}
+              course={course}
+              lesson={lesson}
+              imageUrl={user?.avatarUrl}
+              setEditMode={setEditMode}
+              isEdit={isEdit}
+              editableId={editableId}
+              setText={setText}
+              text={text}
+            />
           </section>
           <CommentsBlock
-            items={[
-              {
-                user: {
-                  fullName: "Вася Пупкин",
-                  avatarUrl: "https://mui.com/static/images/avatar/1.jpg",
-                },
-                text: "Это тестовый комментарий 555555",
-              },
-              {
-                user: {
-                  fullName: "Иван Иванов",
-                  avatarUrl: "https://mui.com/static/images/avatar/2.jpg",
-                },
-                text: "When displaying three lines or more, the avatar is not aligned at the top. You should set the prop to align the avatar at the top",
-              },
-            ]}
-            isLoading={false}
+            items={
+              (comments ? comments : Array(1))
+                .filter(comment => comment?.courseName === course)
+                .filter(comment => comment?.lessonNumber === lesson)
+                .map(comment => {
+                  return {
+                    id: comment._id,
+                    user: {
+                      id: comment.userId,
+                      fullName: comment.user,
+                      avatarUrl: comment.userImageUrl,
+                    },
+                    text: comment.text,
+                  };
+                }) || []
+            }
+            setEditableId={setEditableId}
+            isLoading={loading}
+            setEditMode={setEditMode}
+            setText={setText}
+            ref={ref}
           />
         </div>
       </div>

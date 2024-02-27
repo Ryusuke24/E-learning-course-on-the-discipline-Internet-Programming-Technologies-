@@ -1,7 +1,9 @@
 import React from "react";
-import style from "./SideBlock.module.scss";
+
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+
+import style from "./SideBlock.module.scss";
 
 export const SideBlock = ({ title, children }) => {
   return (

@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { ListBlock } from "../../../Elements/ListBlock/ListBlock";
+import { ListBlock } from "../../../Elements/index";
 import style from "./CourseHTML.module.scss";
 
 function MainHTML() {

@@ -1,8 +1,4 @@
-import { Title } from "../../Elements/Title/Title";
-import { Text } from "../../Elements/Text/Text";
-import { SubTitle } from "../../Elements/SubTitle/SubTitle";
-import { List } from "../../Elements/List/List";
-import { ListBlock } from "../../Elements/ListBlock/ListBlock";
+import { Title, Text, SubTitle, List, ListBlock } from "../../Elements/index";
 import style from "./Home.module.scss";
 
 function Home() {

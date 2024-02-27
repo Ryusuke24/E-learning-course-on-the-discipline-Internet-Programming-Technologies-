@@ -13,8 +13,16 @@ import NotFoundPage from "./Components/NotFoundPage/NotFoundPage";
 import Login from "./Components/login/Login";
 import Register from "./Components/register/Register";
 import LessonHTML1 from "./Components/Courses/HTML/LessonHTML1/LessonHTML1";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchMe } from "./redux/auth";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMe());
+  }, []);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

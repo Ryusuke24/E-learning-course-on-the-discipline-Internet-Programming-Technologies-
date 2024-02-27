@@ -17,7 +17,7 @@ function Header() {
       avatarUrl: "https://vesti42.ru/wp-content/uploads/2023/08/anime.jpg",
     },
   };
-  const isAuth = true;
+  const isAuth = false;
 
   return (
     <>

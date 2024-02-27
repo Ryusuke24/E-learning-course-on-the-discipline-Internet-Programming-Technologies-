@@ -1,21 +1,28 @@
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../../redux/auth";
 import Avatar from "@mui/material/Avatar";
-import AccountLogoSVG from "./AccountLogo.svg";
 
 import style from "./LoginBlock.module.scss";
 
-function MobileLoginBlock({ setClick, isAuth, obj }) {
+function MobileLoginBlock({ setClick, obj }) {
+  const dispatch = useDispatch();
+  const isAuth = Boolean(
+    useSelector(state => state.auth.data) || localStorage.getItem("token")
+  );
+  const user = useSelector(state => state.auth.data);
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.setItem("token", "");
+  };
   return (
     <>
       {isAuth ? (
         <div className={style.authLoginBlock}>
           <Link to={"/account"}>
-            <Avatar
-              alt={obj.user.fullName}
-              src={obj.user.avatarUrl ? obj.user.avatarUrl : AccountLogoSVG}
-            />
+            <Avatar alt={user.fullName} src={user.avatarUrl} />
           </Link>
-          <button className={style.logoutButton} onClick={() => {}}>
+          <button className={style.logoutButton} onClick={handleLogout}>
             Выйти
           </button>
         </div>

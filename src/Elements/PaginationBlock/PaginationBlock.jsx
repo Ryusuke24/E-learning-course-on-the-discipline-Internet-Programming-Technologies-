@@ -8,13 +8,11 @@ export const PaginationBlock = ({ to, back }) => {
   return (
     <section className={style.paginationBlock}>
       <Tooltip title="На предыдущую страницу">
-        {" "}
         <Link to={back}>
           <img src={leftButtonSVG} alt="Back" />
         </Link>
       </Tooltip>
       <Tooltip title="На следующую страницу">
-        {" "}
         <Link to={to}>
           <img src={rightButtonSVG} alt="Forward" />
         </Link>
