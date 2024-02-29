@@ -33,10 +33,22 @@
   text-decoration: none;
   color: $FONT_COLOR;
 
+  &:hover {
+    color: $FOOTER_COLOR;
+  }
+
   &:active {
     color: $FOOTER_COLOR;
   }
 }
 
 .inLinks {
+}
+
+.defaultLink {
+  color: blue;
+
+  &:hover {
+    color: darken($color: blue, $amount: 20);
+  }
 }

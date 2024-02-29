@@ -7,7 +7,13 @@ import style from "./CodeBlock.module.scss";
 import runButtonSVG from "./RunButton.svg";
 import editButtonSVG from "./EditButton.svg";
 
-export const CodeBlock = ({ code, lang, linkToEdit = "#" }) => {
+export const CodeBlock = ({
+  code,
+  lang,
+  linkToEdit = "#",
+  isInteractive = true,
+  isEditable = true,
+}) => {
   function handleClick(e) {
     e.preventDefault();
     // eslint-disable-next-line no-new-func
@@ -23,17 +29,22 @@ export const CodeBlock = ({ code, lang, linkToEdit = "#" }) => {
     <>
       <div className={style.codeBlock}>
         <p>{lang}</p>
+
         <div className={style.codeBlockButtons}>
-          <Tooltip title="Выполнить код">
-            <a href="#" onClick={e => handleClick(e)}>
-              <img src={runButtonSVG} alt="Run" />
-            </a>
-          </Tooltip>
-          <Tooltip title="Отредактировать код">
-            <a target="_blank" rel="noreferrer" href={linkToEdit}>
-              <img src={editButtonSVG} alt="Edit" />
-            </a>
-          </Tooltip>
+          {isInteractive && (
+            <Tooltip title="Выполнить код">
+              <a href="#" onClick={e => handleClick(e)}>
+                <img src={runButtonSVG} alt="Run" />
+              </a>
+            </Tooltip>
+          )}
+          {isEditable && (
+            <Tooltip title="Отредактировать код">
+              <a target="_blank" rel="noreferrer" href={linkToEdit}>
+                <img src={editButtonSVG} alt="Edit" />
+              </a>
+            </Tooltip>
+          )}
         </div>
       </div>
       {code}

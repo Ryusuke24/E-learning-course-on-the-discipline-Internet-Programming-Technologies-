@@ -13,6 +13,7 @@ import NotFoundPage from "./Components/NotFoundPage/NotFoundPage";
 import Login from "./Components/login/Login";
 import Register from "./Components/register/Register";
 import LessonHTML1 from "./Components/Courses/HTML/LessonHTML1/LessonHTML1";
+import LessonHTML2 from "./Components/Courses/HTML/LessonHTML2/LessonHTML2";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchMe } from "./redux/auth";
@@ -35,7 +36,7 @@ function App() {
           <Route path="HTML">
             <Route index element={<MainHTML />} />
             <Route path="1" element={<LessonHTML1 />} />
-            <Route path="2" element={<LessonHTML1 />} />
+            <Route path="2" element={<LessonHTML2 />} />
           </Route>
           <Route path="CSS" element={<MainCSS />} />
           <Route path="Layout" element={<MainLayout />} />

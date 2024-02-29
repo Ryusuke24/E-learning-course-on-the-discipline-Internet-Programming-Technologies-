@@ -8,8 +8,10 @@ import { CodeBlock } from "./CodeBlock/CodeBlock";
 import { ListBlock } from "./ListBlock/ListBlock";
 import { MenuBar } from "./MenuBar/MenuBar";
 import { Menu } from "./Menu/Menu";
+import { OuterLink } from "./OuterLink/OuterLink";
 
 export {
+  OuterLink,
   PaginationBlock,
   AddComment,
   List,
