@@ -1,2 +1,6 @@
 @import "../../../styles/VARIABLES.module.scss";
 @import "../../../styles/Classes.module.scss";
+
+.list {
+  list-style-type: circle !important;
+}
