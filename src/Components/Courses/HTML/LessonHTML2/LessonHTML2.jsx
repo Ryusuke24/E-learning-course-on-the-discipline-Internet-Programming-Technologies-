@@ -881,7 +881,8 @@ function LessonHTML2() {
                     },
                     text: comment.text,
                   };
-                }) || []
+                })
+                .reverse() || []
             }
             setEditableId={setEditableId}
             isLoading={loading}

@@ -317,7 +317,11 @@ function LessonHTML1() {
               Создадим текстовый файл, назовем его index и изменим его
               расширение на .html:
             </Text>
-            <img src={creatingHTMLFile} alt="creating html file" />
+            <img
+              className={style.image}
+              src={creatingHTMLFile}
+              alt="creating html file"
+            />
             <Text>
               Затем откроем этот файл в любом текстовом редакторе, например, в
               VSCode. Добавим в файл следующий текст:
@@ -473,7 +477,8 @@ function LessonHTML1() {
                     },
                     text: comment.text,
                   };
-                }) || []
+                })
+                .reverse() || []
             }
             setEditableId={setEditableId}
             isLoading={loading}
