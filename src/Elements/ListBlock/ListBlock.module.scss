@@ -35,8 +35,8 @@
       align-items: center;
       border: 1px solid $FOOTER_COLOR;
       padding: 20px;
-      height: 80px;
-      width: 100px;
+      min-height: 80px;
+      min-width: 100px;
       &:hover {
         -webkit-animation: shadow-pop-tr 0.3s
           cubic-bezier(0.47, 0, 0.745, 0.715) both;
