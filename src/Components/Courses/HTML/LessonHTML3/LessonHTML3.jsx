@@ -332,7 +332,7 @@ function LessonHTML3() {
               }
             />
             <br />
-            <PaginationBlock to={"/Courses/HTML/3"} back={"/Courses/HTML/1"} />
+            <PaginationBlock to={"/Courses/HTML/4"} back={"/Courses/HTML/2"} />
           </section>
           <section className={style.commentBlock}>
             <AddComment

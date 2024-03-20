@@ -15,11 +15,13 @@ import Register from "./Components/register/Register";
 import LessonHTML1 from "./Components/Courses/HTML/LessonHTML1/LessonHTML1";
 import LessonHTML2 from "./Components/Courses/HTML/LessonHTML2/LessonHTML2";
 import LessonHTML3 from "./Components/Courses/HTML/LessonHTML3/LessonHTML3";
+import LessonHTML4 from "./Components/Courses/HTML/LessonHTML4/LessonHTML4";
 import LessonCSS1 from "./Components/Courses/CSS/LessonCSS1/LessonCSS1";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchMe } from "./redux/auth";
 import LessonCSS2 from "./Components/Courses/CSS/LessonCSS2/LessonCSS2";
+import LessonLayout1 from "./Components/Courses/WebsiteLayout/LessonLayout1/LessonLayout1";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,13 +43,19 @@ function App() {
             <Route path="1" element={<LessonHTML1 />} />
             <Route path="2" element={<LessonHTML2 />} />
             <Route path="3" element={<LessonHTML3 />} />
+            <Route path="4" element={<LessonHTML4 />} />
           </Route>
           <Route path="CSS">
             <Route index element={<MainCSS />} />
             <Route path="1" element={<LessonCSS1 />} />
             <Route path="2" element={<LessonCSS2 />} />
           </Route>
-          <Route path="Layout" element={<MainLayout />} />
+          <Route path="Layout">
+            <Route index element={<MainLayout />} />
+            <Route path="1" element={<LessonLayout1 />} />
+            <Route path="2" element={<LessonCSS2 />} />
+          </Route>
+
           <Route path="JS" element={<MainJS />} />
           <Route path="PHP" element={<MainPHP />} />
         </Route>

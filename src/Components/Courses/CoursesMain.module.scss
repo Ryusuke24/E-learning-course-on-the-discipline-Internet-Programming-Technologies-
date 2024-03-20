@@ -4,6 +4,7 @@
 @media (max-width: 990px) {
   .main {
     display: grid;
+    width: 100vw;
     min-height: inherit;
     color: $FONT_COLOR;
     font-family: $MAIN_FONT_FAMILY;

@@ -862,7 +862,6 @@ function LessonCSS2() {
                 тут
               </OuterLink>
             </Text>
-            <PaginationBlock to={"/Courses/CSS/2"} back={"/Courses/CSS/"} />
             <CodeBlock
               isInteractive={false}
               isEditable={false}
@@ -918,6 +917,7 @@ function LessonCSS2() {
               }
             />
             <br />
+            <PaginationBlock to={"/Courses/CSS/2"} back={"/Courses/CSS/"} />
           </section>
           <section className={style.commentBlock}>
             <AddComment

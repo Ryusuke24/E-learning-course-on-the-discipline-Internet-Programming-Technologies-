@@ -1,0 +1,43 @@
+@import "../../../../styles/VARIABLES.module.scss";
+@import "../../../../styles/Classes.module.scss";
+
+@media (max-width: 990px) {
+  .main {
+    display: grid;
+    min-height: inherit;
+    color: $FONT_COLOR;
+    font-family: $MAIN_FONT_FAMILY;
+
+    .section1 {
+      padding: 20px;
+      background-color: $MAIN_BACKGROUND_COLOR;
+    }
+
+    .section2 {
+      padding: 20px;
+      background-color: $FOOTER_COLOR;
+    }
+  }
+}
+
+@media (min-width: 991px) {
+  .main {
+    display: grid;
+    min-height: inherit;
+    color: $FONT_COLOR;
+    font-family: $MAIN_FONT_FAMILY;
+    font-size: large;
+  }
+
+  .section1 {
+    padding-left: 25px;
+    background-color: $MAIN_BACKGROUND_COLOR;
+    margin-bottom: 15px;
+  }
+
+  .section2 {
+    padding-left: 25px;
+    background-color: $FOOTER_COLOR;
+    margin-bottom: 15px;
+  }
+}
