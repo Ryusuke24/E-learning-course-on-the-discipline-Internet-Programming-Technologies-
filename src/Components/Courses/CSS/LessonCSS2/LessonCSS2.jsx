@@ -917,7 +917,7 @@ function LessonCSS2() {
               }
             />
             <br />
-            <PaginationBlock to={"/Courses/CSS/2"} back={"/Courses/CSS/"} />
+            <PaginationBlock to={"/Courses/CSS/3"} back={"/Courses/CSS/1"} />
           </section>
           <section className={style.commentBlock}>
             <AddComment

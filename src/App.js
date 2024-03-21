@@ -22,6 +22,7 @@ import { useEffect } from "react";
 import { fetchMe } from "./redux/auth";
 import LessonCSS2 from "./Components/Courses/CSS/LessonCSS2/LessonCSS2";
 import LessonLayout1 from "./Components/Courses/WebsiteLayout/LessonLayout1/LessonLayout1";
+import LessonCSS3 from "./Components/Courses/CSS/LessonCSS3/LessonCSS3";
 
 function App() {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ function App() {
             <Route index element={<MainCSS />} />
             <Route path="1" element={<LessonCSS1 />} />
             <Route path="2" element={<LessonCSS2 />} />
+            <Route path="3" element={<LessonCSS3 />} />
           </Route>
           <Route path="Layout">
             <Route index element={<MainLayout />} />

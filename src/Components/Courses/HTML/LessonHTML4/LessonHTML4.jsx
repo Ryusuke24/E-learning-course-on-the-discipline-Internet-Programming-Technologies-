@@ -146,8 +146,8 @@ function LessonHTML4() {
             />
             <Text>
               Оберните каждый input в label и укажите их связь c помощью for(у
-              label) и id (у input), установите атрибуты name для каждого тега.
-              В inpute для телефона указать в атрибут pattern ={" "}
+              label) и id (у input), установите атрибуты name для каждого тега.{" "}
+              <br />В inpute для телефона указать в атрибут pattern ={" "}
               {"^((8|+7)[- ]?)?((?d{3})?[- ]?)?[d- ]{7,10}$"}
             </Text>
             <SubTitle>Задание 3 : Работа с input </SubTitle>
