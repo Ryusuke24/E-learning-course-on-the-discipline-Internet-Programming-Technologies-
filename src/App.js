@@ -16,13 +16,16 @@ import LessonHTML1 from "./Components/Courses/HTML/LessonHTML1/LessonHTML1";
 import LessonHTML2 from "./Components/Courses/HTML/LessonHTML2/LessonHTML2";
 import LessonHTML3 from "./Components/Courses/HTML/LessonHTML3/LessonHTML3";
 import LessonHTML4 from "./Components/Courses/HTML/LessonHTML4/LessonHTML4";
-import LessonCSS1 from "./Components/Courses/CSS/LessonCSS1/LessonCSS1";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchMe } from "./redux/auth";
+import LessonCSS1 from "./Components/Courses/CSS/LessonCSS1/LessonCSS1";
 import LessonCSS2 from "./Components/Courses/CSS/LessonCSS2/LessonCSS2";
-import LessonLayout1 from "./Components/Courses/WebsiteLayout/LessonLayout1/LessonLayout1";
 import LessonCSS3 from "./Components/Courses/CSS/LessonCSS3/LessonCSS3";
+import LessonCSS4 from "./Components/Courses/CSS/LessonCSS4/LessonCSS4";
+
+import LessonLayout1 from "./Components/Courses/WebsiteLayout/LessonLayout1/LessonLayout1";
+import LessonLayout2 from "./Components/Courses/WebsiteLayout/LessonLayout2/LessonLayout2";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,11 +54,12 @@ function App() {
             <Route path="1" element={<LessonCSS1 />} />
             <Route path="2" element={<LessonCSS2 />} />
             <Route path="3" element={<LessonCSS3 />} />
+            <Route path="4" element={<LessonCSS4 />} />
           </Route>
           <Route path="Layout">
             <Route index element={<MainLayout />} />
             <Route path="1" element={<LessonLayout1 />} />
-            <Route path="2" element={<LessonCSS2 />} />
+            <Route path="2" element={<LessonLayout2 />} />
           </Route>
 
           <Route path="JS" element={<MainJS />} />

@@ -33,8 +33,8 @@ function Login() {
       alert("Не удалось авторизоваться");
     }
 
-    if ("token" in data.payload) {
-      localStorage.setItem("token", data.payload.token);
+    if (data.payload?.token) {
+      localStorage.setItem("token", data.payload?.token);
       setData(data);
     }
   };

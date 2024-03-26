@@ -136,26 +136,41 @@ function LessonLayout1() {
               flex со следующей структурой: вверху и внизу будут стандартно
               шапка и футер, а в центре - две колонки
             </Text>
-            <List
-              elems={[
-                "Шестнадцатеричное значение. Например : #1C4463",
-                `Значение RGB и RGBA. Обычно применяется диапазон от 0 до 126. Значение А (alpha) - компонент прозрачности, допустимые значения от 0 до 1, где 0 - полностью прозрачный, 1 - не прозрачный (этот параметр не обязателен). Например : rgb(28,68,99, 0.6).
-                 `,
-                "Значение HSL и HSLA. HSL представляет аббревиатуру: Hue — тон, Saturation — насыщенность и Lightness — осветленность. Значение А (alpha) - компонент прозрачности, допустимые значения от 0 до 1, где 0 - полностью прозрачный, 1 - не прозрачный (этот параметр не обязателен). Например : hsl(206,56%,25%)",
-              ]}
-            />
-
             <CodeBlock
               isInteractive={false}
               isEditable={false}
-              lang={"CSS"}
+              lang={"CSS (styles.css)"}
               code={
                 <pre>
                   <code className="language-css">
-                    {`
-    body {
-         font-family : Arial;
-    }`}
+                    {`header,main,footer {
+  background-color: grey;
+  border: 1px solid black;
+}
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
+}
+
+header,footer {
+  padding: 25px;
+display: flex;
+justify-content: center;
+}
+
+main {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  padding:10px;
+}
+
+.col1, .col2 {
+  background-color: white;
+  padding: 25px;
+}`}
                   </code>
                 </pre>
               }
@@ -163,24 +178,26 @@ function LessonLayout1() {
             <br />
             <CodeBlock
               isInteractive={false}
-              isEditable={false}
-              lang={"HTML"}
+              isEditable={true}
+              linkToEdit={"https://onecompiler.com/html/428agmxjg"}
+              lang={"HTML (index.html)"}
               code={
                 <pre>
                   <code className="language-html">
                     {`
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
-    rel="stylesheet">
-    <title>Document</title>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header>Header</header>
+    <main>
+      <div class="col1">Column 1</div>
+      <div class="col2">Column 2</div>
+    </main>
+    <footer>Footer</footer>
   </body>
 </html>
 `}
@@ -190,60 +207,52 @@ function LessonLayout1() {
             />
             <br />
           </section>
-          <SubTitle>Высота шрифта</SubTitle>
           <Text>
-            Для установки шрифта испольется свойсво font-size <br />
-            Размер шрифта устанавливается :
+            Flexbox CSS - это современный способ верстки страниц с
+            использованием CSS. Он позволяет создавать гибкие и адаптивные
+            макеты, которые подстраиваются под различные размеры экранов.
+            Flexbox использует свойства display: flex и display: inline-flex для
+            создания гибких контейнеров и элементов. <br />
+            Основные свойства Flexbox:
           </Text>
           <List
             elems={[
-              "Пикселями. Пример p { font-size: 24px; }",
-              "Процентами. Пример p { font-size: 50%; }",
-              "Единицами em. Пример p { font-size: 1.5em; }",
+              "flex-direction - определяет направление элементов внутри контейнера;",
+              "justify-content - выравнивает элементы по горизонтали",
+              "wrap - указывает, как элементы должны переноситься на новую строку",
             ]}
           />
-          <SubTitle>Форматирование текста: text-decoration</SubTitle>
           <Text>
-            Свойство text-decoration позволяет добавить к тексту некоторые
-            дополнительные эффекты. Это свойство может принимать следующие
-            значения:
+            Приведенный код создает страницу с основным контентом (main),
+            разделенным на две колонки (.col1 и .col2). Между колонками есть
+            промежуток в 10 пикселей. <br /> Весь контент расположен в
+            контейнере с гибким потоком (flex-flow) и с промежутком между
+            элементами в 10 пикселей (gap: 10px). <br /> Вверху и внизу страницы
+            располагаются блоки header и footer с отступами по 25 пикселей и с
+            центрированным содержимым (justify-content: center).
           </Text>
-          <List
-            elems={[
-              "underline: подчеркивает текст;",
-              "overline: надчеркивает текст, проводит верхнюю линию;",
-              "line-through: зачеркивает текст;",
-              "none: к тексту не применяется декорирование",
-            ]}
-          />
-          <SubTitle>Форматирование текста: text-transform</SubTitle>
+          <div className={style.section2}>
+            <Text>
+              <em>
+                Flex отлично подходит для создания простых макетов и настройкой
+                элементов внутри элемента-контейнера
+              </em>
+            </Text>
+          </div>
           <Text>
-            Свойство text-transform изменяет регистр текста. Оно может принимать
-            следующие значения:
+            Больше о flex -{" "}
+            <OuterLink
+              to={"https://developer.mozilla.org/ru/docs/Web/CSS/flex"}
+            >
+              тут
+            </OuterLink>{" "}
+            <br />И увлекательная игра, которая позволяет немного понять flex -{" "}
+            <OuterLink to={"https://flexboxfroggy.com/#ru"}>тут</OuterLink>
           </Text>
-          <List
-            elems={[
-              "capitalize: делает первую букву слова заглавной;",
-              "uppercase: все слово переводится в верхний регистр;",
-              "lowercase: все слово переводится в нижний регистр;",
-              "none: регистр символов слова никак не изменяется.",
-            ]}
-          />
-          <SubTitle>Форматирование текста: межсимвольный интервал</SubTitle>
           <Text>
-            Два свойства CSS позволяют управлять интервалом между символами и
-            словами текста. Для межсимвольного интервала применяется атрибут
-            <span className={style.markedText}>letter-spacing</span>, а для
-            интервала между словами -{" "}
-            <span className={style.markedText}>word-spacing</span> :
-          </Text>
-          <SubTitle>Форматирование текста: text-shadow</SubTitle>
-          <Text>
-            С помощью свойства text-shadow можно создать тени для текста. Для
-            этого свойства необходимо задать четыре значения: горизонтальное
-            смещение тени относительно текста, вертикальное смещение тени
-            относительно текста, степень размытости тени и цвет отбрасываемой
-            тени.
+            Теперь попробуем создать сложный макет с помощью Grid. <br />{" "}
+            Cделаем сложный макет сайта c элементами header,main,footer и двумя
+            сайдбарами.
           </Text>
           <CodeBlock
             isInteractive={false}
@@ -252,26 +261,54 @@ function LessonLayout1() {
             code={
               <pre>
                 <code className="language-css">
-                  {`.one {
-  font-size: 20px;
-  text-decoration: underline;
-  text-transform: capitalize;
-  letter-spacing: 10px;
-  
+                  {`header,main,footer,aside {
+  background-color: grey;
+  border: 1px solid black;
 }
 
-.two {
-  font-size: 75%;
-  text-decoration: overline;
-  text-transform: uppercase;
-  text-shadow: 5px 4px 3px black;
+body {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas: "header header header"
+  "leftAside main . "
+  " . main rightAside"
+  "footer footer footer";
 }
 
-.three {
-  font-size: 2em;
-  text-decoration: line-through;
-  text-transform: lowercase;
-  word-spacing: 30px;
+header,footer {
+  padding: 25px;
+display: flex;
+justify-content: center;
+}
+
+.leftAside {
+  grid-area: leftAside;
+}
+
+.rightAside {
+  grid-area: rightAside;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer ;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  padding:10px;
+}
+
+.col1, .col2 {
+  background-color: white;
+  padding: 25px;
 }`}
                 </code>
               </pre>
@@ -281,7 +318,7 @@ function LessonLayout1() {
           <CodeBlock
             isInteractive={false}
             isEditable={true}
-            linkToEdit="https://onecompiler.com/html/427qef6ty"
+            linkToEdit={"https://onecompiler.com/html/428ajecgv"}
             lang={"HTML (index.html)"}
             code={
               <pre>
@@ -294,9 +331,18 @@ function LessonLayout1() {
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <p class="one">Lorem ipsum</p>
-    <p class="two">Lorem ipsum</p>
-    <p class="three">Lorem ipsum</p>
+    <header>Header</header>
+    <aside class="leftAside">
+      Content
+    </aside>
+    <main>
+      <div class="col1">Column 1</div>
+      <div class="col2">Column 2</div>
+    </main>
+        <aside class="rightAside">
+      Content
+    </aside>
+    <footer>Footer</footer>
   </body>
 </html>
 `}
@@ -305,8 +351,504 @@ function LessonLayout1() {
             }
           />
           <br />
+          <Text>
+            Grid - это система организации контента на веб-странице, которая
+            позволяет упорядочивать элементы с помощью сетки. Grid позволяет
+            создавать сложные макеты с несколькими колонками, разной высотой
+            элементов и т.д. <br />
+            Grid имеет следующие свойства:
+          </Text>
+          <List
+            elems={[
+              "display: grid - указывает, что элемент является гридом.",
+              "grid-template-rows / columns - задает количество строк и столбцов в сетке.",
+              "gap - задает расстояние между элементами.",
+              "repeat() / auto-fill() / auto-fit() - заполняют сетку элементами автоматически.",
+              "grid-area - задает область элемента в гриде.",
+            ]}
+          />
+          <Text>
+            Больше о grid -{" "}
+            <OuterLink
+              to={"https://developer.mozilla.org/ru/docs/Web/CSS/grid"}
+            >
+              тут
+            </OuterLink>{" "}
+            <br />И увлекательная игра, которая позволяет немного понять grid -{" "}
+            <OuterLink to={"https://cssgridgarden.com/#ru"}>тут</OuterLink>
+          </Text>
+          <CodeBlock
+            isInteractive={false}
+            isEditable={false}
+            lang={"CSS (styles.css)"}
+            code={
+              <pre>
+                <code className="language-css">
+                  {`header,main,footer,aside {
+  background-color: grey;
+  border: 1px solid black;
+}
 
-          <PaginationBlock to={"/Courses/CSS/2"} back={"/Courses/CSS/"} />
+body {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas: "header header header"
+  "leftAside main rightAside "
+  "footer footer footer";
+}
+
+header,footer {
+display: flex;
+justify-content: center;
+}
+
+.leftAside, .rightAside {
+    padding: 10px;
+}
+
+.leftAside {
+  grid-area: leftAside;
+}
+
+
+.rightAside {
+  grid-area: rightAside;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  flex-flow: column wrap;
+  
+  h1 {
+    padding-left: 25px;
+  }
+  
+  nav {
+
+  border : 1px solid black;
+  background-color: white;
+  height: 50px;
+
+  
+  ul {
+  
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    
+    
+    li {
+    display: flex;
+    
+    justify-content: center;
+    border-right: 1px solid black;
+    
+    &:first-child {
+      font-weight: bold;
+    }
+    
+    &:last-child {
+      border: none;
+    }
+    }
+  }
+}
+}
+
+footer {
+  grid-area: footer ;
+  background-color: #242424;
+  color: white;
+  font-size: 0.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  padding:10px;
+}
+
+.col1, .col2 {
+  background-color: white;
+  padding: 25px;
+}`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <CodeBlock
+            isInteractive={false}
+            isEditable={true}
+            linkToEdit={"https://onecompiler.com/html/428amueev"}
+            lang={"HTML (index.html)"}
+            code={
+              <pre>
+                <code className="language-html">
+                  {`
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>MySite.ru - Новостной сайт</h1>
+      <nav>
+        <ul class="naviation">
+          <li>Главная</li>
+          <li>Новостная лента</li>
+          <li>О нас</li>
+        </ul>
+      </nav>  
+    </header>
+        
+      <aside class="leftAside">
+        <h2>
+          Lorem
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Praesent eget tortor vel lacus pretium condimentum. 
+          Mauris euismod, tellus non sagittis posuere, 
+          urna lectus dignissim ligula, nec convallis odio 
+          nisi nec nunc. Maecenas imperdiet erat in urna blandit, 
+          eget tincidunt tortor commodo. Sed et felis sed leo varius 
+          euismod. Duis et hendrerit mauris.
+        </p>
+        
+      </aside>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Praesent eget tortor vel lacus pretium condimentum. 
+            Mauris euismod, tellus non sagittis posuere, urna lectus 
+            dignissim ligula, nec convallis odio nisi nec nunc. 
+            Maecenas imperdiet erat in urna blandit, eget tincidunt 
+            tortor commodo. Sed et felis sed leo varius euismod. 
+            Duis et hendrerit mauris. Cras lobortis pulvinar urna eu 
+            aliquam. Ut id nisl quis massa dignissim convallis. 
+            Suspendisse potenti. Pellentesque a scelerisque nisi. 
+            Phasellus ultrices, leo a venenatis vehicula, ex nisi 
+            dictum nisl, at lacinia sem ligula eget sem. In hac 
+            habitasse platea dictumst.
+          </p>
+        </main>
+        <aside class="rightAside">
+          <h2>
+            Lorem
+          </h2>
+          <p>        
+            Статья 1 : Lorem ipsum
+            Cтатья 2 : Lorem
+            Cтатья 3 : ipsum
+          </p>
+      </aside>
+    <footer><p>Контакты : admin@admin.com</p><p>© Copyright MySite.ru, 2024</p></footer>
+  </body>
+</html>
+`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <Title>
+            Возможности по трансформации, переходам и анимации содержимого
+            веб-страницы
+          </Title>
+          <SubTitle>Трансформации</SubTitle>
+          <Text>
+            <span className={style.markedText}>Transform</span> - это свойство
+            CSS, которое позволяет изменять положение, размер и форму элемента
+            на странице. <br />
+            Оно включает в себя несколько свойств, таких как translate(),
+            rotate(), scale() и skew(). <br /> Каждое из этих свойств может быть
+            использовано для изменения соответствующего аспекта элемента.
+            <br />
+            Например, свойство translate() перемещает элемент по осям X и Y,
+            rotate() вращает элемент, scale() изменяет его размер, а skew()
+            искажает его форму. <br />
+            Пример поворота блока на 30 градусов:
+          </Text>
+          <CodeBlock
+            isInteractive={false}
+            isEditable={false}
+            lang={"CSS (styles.css)"}
+            code={
+              <pre>
+                <code className="language-css">
+                  {`div {
+  height: 100px;
+  width: 100px;
+  background-color: grey;
+  border: 1px solid black;
+}
+
+body {
+  display: flex;
+  gap: 15px;
+}
+
+.two {
+  transform: rotate(45deg);
+}`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <CodeBlock
+            isInteractive={false}
+            isEditable={true}
+            linkToEdit={"https://onecompiler.com/html/428ar9m5u"}
+            lang={"HTML (index.html)"}
+            code={
+              <pre>
+                <code className="language-html">
+                  {`
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <div class="first"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+  </body>
+</html>
+`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <Text>
+            Больше о свойстве transform -{" "}
+            <OuterLink
+              to={"https://developer.mozilla.org/ru/docs/Web/CSS/transform"}
+            >
+              тут
+            </OuterLink>{" "}
+          </Text>
+          <SubTitle>Переходы</SubTitle>
+          <Text>
+            <span className={style.markedText}>Transition</span> - это свойство
+            CSS, которое определяет, как элемент будет переходить из одного
+            состояния в другое. <br />
+            Например, если вы хотите, чтобы кнопка меняла свой цвет при
+            наведении курсора, вы можете использовать transition для определения
+            скорости и плавности этого перехода.
+          </Text>
+          <CodeBlock
+            isInteractive={false}
+            isEditable={false}
+            lang={"CSS (styles.css)"}
+            code={
+              <pre>
+                <code className="language-css">
+                  {`div {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  background-color: red;
+  transition-property: background-color;
+  transition-duration: 3s ;
+  &:hover {
+    background-color: blue;
+  }
+}`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <CodeBlock
+            isInteractive={false}
+            isEditable={true}
+            linkToEdit="https://onecompiler.com/html/428avxr73"
+            lang={"HTML (index.html)"}
+            code={
+              <pre>
+                <code className="language-html">
+                  {`
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      
+    </div>
+  </body>
+</html>
+`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <Text>
+            Больше о свойстве transition -{" "}
+            <OuterLink
+              to={"https://developer.mozilla.org/en-US/docs/Web/CSS/transition"}
+            >
+              тут
+            </OuterLink>{" "}
+          </Text>
+          <SubTitle>Анимация</SubTitle>
+          <Text>
+            <span>Анимация CSS</span> - это метод создания динамических и
+            интерактивных эффектов на веб-страницах с использованием только CSS.
+            Она позволяет анимировать различные свойства элементов, такие как
+            изменение размера, цвета, прозрачности, перемещения и многое другое.
+            <br />
+            <br />
+            CSS-анимация может быть применена к любому элементу HTML, который вы
+            хотите анимировать, и позволяет создавать различные виды
+            анимационных эффектов, включая линейные переходы, затухания,
+            вращения, масштабирование и т. д.
+            <br />
+            <br />
+            Анимации CSS могут быть определены с помощью ключевых кадров,
+            которые определяют начальное и конечное состояние элемента, а также
+            промежуточные шаги, через которые элемент должен пройти во время
+            анимации. Более того, можно определить различные типы циклов
+            анимации, такие как бесконечный цикл или определенное количество
+            повторений.
+            <br />
+            <br />
+            Анимация опирается на последовательно смену ключевых кадров
+            (keyframes). Каждый ключевой кадр определяет один набор значений для
+            анимируемых свойств. Последовательная смена таких ключевых кадров
+            фактически будет представлять анимацию.
+            <br />
+            Пример объявления ключевого кадра в CSS 3:
+          </Text>
+          <CodeBlock
+            isInteractive={false}
+            isEditable={false}
+            lang={"CSS"}
+            code={
+              <pre>
+                <code className="language-css">
+                  {`@keyframes название_анимации {
+    from {
+      /* начальное значение */
+    }                
+    to {
+      /* конечное значение */
+    }              
+}`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <Text>
+            После ключевого слова @keyframes идет имя анимации.
+            <br /> Затем в фигурных скобках определяются как минимум два
+            ключевых кадра.
+            <br /> Блок после ключевого слова from объявляется начальный
+            ключевой кадр, а после ключевого слова to в блоке определяется
+            конечный ключевой кадр.
+            <br />
+            Внутри каждого ключевого кадра определяется одно или несколько
+            свойств CSS, подобно тому, как создается обычный стиль.
+            <br />
+            Пример определения анимации для фонового цвета элемента:
+          </Text>
+          <CodeBlock
+            isInteractive={false}
+            isEditable={false}
+            lang={"CSS (styles.css)"}
+            code={
+              <pre>
+                <code className="language-css">
+                  {`div {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  background-color: red;
+  &:hover {
+    animation: BgAnimation 3s infinite;
+  }
+}
+
+@keyframes BgAnimation {
+  0% {
+    background-color: red;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: green;
+  }
+  75% {
+    background-color: orange;
+  }
+  100% {
+    background-color: blue;
+  }
+}`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <CodeBlock
+            isInteractive={false}
+            isEditable={true}
+            linkToEdit="https://onecompiler.com/html/428awj8ee"
+            lang={"HTML (index.html)"}
+            code={
+              <pre>
+                <code className="language-html">
+                  {`
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      
+    </div>
+  </body>
+</html>
+`}
+                </code>
+              </pre>
+            }
+          />
+          <br />
+          <Text>
+            Больше о свойстве animation -{" "}
+            <OuterLink
+              to={"https://developer.mozilla.org/en-US/docs/Web/CSS/animation"}
+            >
+              тут
+            </OuterLink>{" "}
+          </Text>
+          <PaginationBlock to={"/Courses/Layout/2"} back={"/Courses/Layout"} />
           <section className={style.commentBlock}>
             <AddComment
               ref={ref}

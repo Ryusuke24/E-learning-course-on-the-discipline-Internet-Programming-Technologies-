@@ -7,9 +7,7 @@ import style from "./LoginBlock.module.scss";
 
 function MobileLoginBlock({ setClick, obj }) {
   const dispatch = useDispatch();
-  const isAuth = Boolean(
-    useSelector(state => state.auth.data) || localStorage.getItem("token")
-  );
+  const isAuth = Boolean(useSelector(state => state.auth.data));
   const user = useSelector(state => state.auth.data);
   const handleLogout = () => {
     dispatch(logout());

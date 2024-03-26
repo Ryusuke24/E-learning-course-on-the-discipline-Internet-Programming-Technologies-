@@ -19,7 +19,12 @@ export const fetchUserData = createAsyncThunk(
       if (res.body === "undefined") {
         throw new Error("Not found login");
       }
-      return await res.json();
+
+      const data = await res.json();
+      if ("message" in data) {
+        throw new Error(data.message);
+      }
+      return data;
     } catch (error) {
       rejectWithValue(error);
     }
