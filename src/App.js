@@ -26,6 +26,8 @@ import LessonCSS4 from "./Components/Courses/CSS/LessonCSS4/LessonCSS4";
 
 import LessonLayout1 from "./Components/Courses/WebsiteLayout/LessonLayout1/LessonLayout1";
 import LessonLayout2 from "./Components/Courses/WebsiteLayout/LessonLayout2/LessonLayout2";
+import LessonLayout3 from "./Components/Courses/WebsiteLayout/LessonLayout3/LessonLayout3";
+import LessonLayout4 from "./Components/Courses/WebsiteLayout/LessonLayout4/LessonLayout4";
 
 function App() {
   const dispatch = useDispatch();
@@ -60,6 +62,8 @@ function App() {
             <Route index element={<MainLayout />} />
             <Route path="1" element={<LessonLayout1 />} />
             <Route path="2" element={<LessonLayout2 />} />
+            <Route path="3" element={<LessonLayout3 />} />
+            <Route path="4" element={<LessonLayout4 />} />
           </Route>
 
           <Route path="JS" element={<MainJS />} />
