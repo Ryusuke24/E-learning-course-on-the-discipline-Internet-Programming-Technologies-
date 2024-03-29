@@ -28,6 +28,7 @@ import LessonLayout1 from "./Components/Courses/WebsiteLayout/LessonLayout1/Less
 import LessonLayout2 from "./Components/Courses/WebsiteLayout/LessonLayout2/LessonLayout2";
 import LessonLayout3 from "./Components/Courses/WebsiteLayout/LessonLayout3/LessonLayout3";
 import LessonLayout4 from "./Components/Courses/WebsiteLayout/LessonLayout4/LessonLayout4";
+import LessonJS1 from "./Components/Courses/JavaScript/LessonJS1/LessonJS1";
 
 function App() {
   const dispatch = useDispatch();
@@ -65,8 +66,13 @@ function App() {
             <Route path="3" element={<LessonLayout3 />} />
             <Route path="4" element={<LessonLayout4 />} />
           </Route>
-
-          <Route path="JS" element={<MainJS />} />
+          <Route path="JS">
+            <Route index element={<MainJS />} />
+            <Route path="1" element={<LessonJS1 />} />
+            <Route path="2" element={<LessonLayout2 />} />
+            <Route path="3" element={<LessonLayout3 />} />
+            <Route path="4" element={<LessonLayout4 />} />
+          </Route>
           <Route path="PHP" element={<MainPHP />} />
         </Route>
         <Route path="AdvanceCourses">

@@ -1,7 +1,7 @@
 import { ListBlock } from "../../../Elements/index";
 import style from "./WebsiteLayout.module.scss";
 
-function MainCSS() {
+function MainLayout() {
   return (
     <>
       <div className={style.main}>
@@ -65,4 +65,4 @@ function MainCSS() {
   );
 }
 
-export default MainCSS;
+export default MainLayout;
