@@ -58,6 +58,16 @@ function MainLayout() {
                 </p>
               ),
             },
+            {
+              to: "test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме Верстка
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
       </div>

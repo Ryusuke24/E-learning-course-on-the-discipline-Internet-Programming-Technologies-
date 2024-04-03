@@ -87,6 +87,16 @@ function LessonLayout2() {
                 </p>
               ),
             },
+            {
+              to: "/courses/Layout/test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме Верстка
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
         <div className={style.main}>

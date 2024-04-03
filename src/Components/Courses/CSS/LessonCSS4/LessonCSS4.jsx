@@ -88,6 +88,16 @@ function LessonCSS4() {
                 </p>
               ),
             },
+            {
+              to: "/courses/CSS/test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме CSS
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
         <div className={style.main}>
@@ -297,7 +307,7 @@ ol {
               <img className={style.image} src={task6} alt="task6" />
             </div>
             <br />
-            <PaginationBlock to={"/Courses"} back={"/Courses/CSS/3"} />
+            <PaginationBlock to={"/Courses/CSS/test"} back={"/Courses/CSS/3"} />
           </section>
           <section className={style.commentBlock}>
             <AddComment

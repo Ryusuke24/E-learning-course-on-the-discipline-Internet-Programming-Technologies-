@@ -87,6 +87,26 @@ function LessonCSS2() {
                 </p>
               ),
             },
+            {
+              to: "test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме CSS
+                  </span>
+                </p>
+              ),
+            },
+            {
+              to: "/courses/CSS/test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме CSS
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
         <div className={style.main}>

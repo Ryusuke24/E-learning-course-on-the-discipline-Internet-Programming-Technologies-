@@ -2,6 +2,7 @@ import { Tooltip } from "@mui/material";
 
 import { useEffect } from "react";
 import Prism from "prismjs";
+
 import "../../prism.css";
 import style from "./CodeBlock.module.scss";
 import runButtonSVG from "./RunButton.svg";
@@ -23,6 +24,7 @@ export const CodeBlock = ({
 
   useEffect(() => {
     Prism.highlightAll();
+    console.log(Prism.languages);
   });
 
   return (

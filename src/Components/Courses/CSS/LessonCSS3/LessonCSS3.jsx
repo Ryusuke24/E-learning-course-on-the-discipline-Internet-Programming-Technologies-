@@ -90,6 +90,16 @@ function LessonCSS3() {
                 </p>
               ),
             },
+            {
+              to: "/courses/CSS/test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме CSS
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
         <div className={style.main}>

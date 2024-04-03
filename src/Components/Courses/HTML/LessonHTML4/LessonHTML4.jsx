@@ -88,6 +88,16 @@ function LessonHTML4() {
                 </p>
               ),
             },
+            {
+              to: "/courses/HTML/test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме HTML
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
         <div className={style.main}>
@@ -295,7 +305,10 @@ function LessonHTML4() {
               </Text>
             </div>
 
-            <PaginationBlock to={"/Courses"} back={"/Courses/HTML/3"} />
+            <PaginationBlock
+              to={"/Courses/HTML/test"}
+              back={"/Courses/HTML/3"}
+            />
           </section>
           <section className={style.commentBlock}>
             <AddComment

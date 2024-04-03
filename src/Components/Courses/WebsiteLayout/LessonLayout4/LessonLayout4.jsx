@@ -87,6 +87,16 @@ function LessonLayout4() {
                 </p>
               ),
             },
+            {
+              to: "/courses/Layout/test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме Верстка
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
         <div className={style.main}>
@@ -386,7 +396,7 @@ function LessonLayout4() {
             </Text>
 
             <PaginationBlock
-              to={"/Courses/Layout"}
+              to={"/Courses/Layout/test"}
               back={"/Courses/Layout/3"}
             />
           </section>

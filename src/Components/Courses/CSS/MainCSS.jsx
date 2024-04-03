@@ -56,6 +56,16 @@ function MainCSS() {
                 </p>
               ),
             },
+            {
+              to: "test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме CSS
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
       </div>

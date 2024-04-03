@@ -54,6 +54,16 @@ function CoursesMain() {
                 </p>
               ),
             },
+            {
+              to: "GeneralTest",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Итоговое тестирование
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
       </div>

@@ -55,6 +55,16 @@ function MainHTML() {
                 </p>
               ),
             },
+            {
+              to: "test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме HTML
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
       </div>

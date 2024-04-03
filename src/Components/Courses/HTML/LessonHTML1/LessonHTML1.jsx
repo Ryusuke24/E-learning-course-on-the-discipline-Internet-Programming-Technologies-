@@ -86,6 +86,16 @@ function LessonHTML1() {
                 </p>
               ),
             },
+            {
+              to: "/courses/HTML/test",
+              text: (
+                <p>
+                  <span className={style.markedText}>
+                    Тестирование по теме HTML
+                  </span>
+                </p>
+              ),
+            },
           ]}
         />
         <div className={style.main}>
